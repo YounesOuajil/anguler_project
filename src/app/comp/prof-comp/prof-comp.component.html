@@ -1,27 +1,36 @@
-<!-- sample.component.html -->
-
+<p><strong>Present List</strong></p>
 <table class="cool-table">
     <thead>
-      <tr>
-        <th>Name</th>
-        <th>Lastname</th>
-        <th>Phone</th>
-        <th>Group</th>
-        <th>Fillier</th>
-        <th>Action</th>
-      </tr>
+        <tr>
+            <th>Name</th>
+            <th>Lastname</th>
+            <th>Phone</th>
+            <th>Group</th>
+            <th>Fillier</th>
+            <th>Action</th>
+        </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let e of etudiants">
-        <tr *ngIf="e.isPresent==false">
-          <td>{{ e.name }}</td>
-          <td>{{ e.lastname }}</td>
-          <td>{{ e.phone }}</td>
-          <td>{{ e.group }}</td>
-          <td>{{ e.fillier }}</td>
-          <td><button (click)="markAbsent(e)">Absent</button></td>
-        </tr>
-      </ng-container>
+        <ng-container *ngFor="let e of etudiants">
+            <tr *ngIf="e.isPresent==false">
+                <td>{{ e.name }}</td>
+                <td>{{ e.lastname }}</td>
+                <td>{{ e.phone }}</td>
+                <td>{{ e.group }}</td>
+                <td>{{ e.fillier }}</td>
+                <td><button (click)="markAbsent(e)">Absent</button></td>
+            </tr>
+        </ng-container>
     </tbody>
-  </table>
-  
+</table>
+
+<div class="cool-field">
+    <label for="scienceName"> Le Nom du cours:</label>
+    <input [(ngModel)]="scienceName" type="text" id="scienceName" name="scienceName" placeholder="Entrer le nom du cours">
+
+    <label for="hour">L'heure:</label>
+    <input [(ngModel)]="hour" type="text" id="hour" name="hour" placeholder="Entrer l'heure">
+    <br>
+
+    <button class="finish-button" (click)="finish()">Finish</button>
+</div>

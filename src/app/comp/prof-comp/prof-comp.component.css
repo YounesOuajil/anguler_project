@@ -42,4 +42,43 @@
       font-size: 14px;
     }
   }
-  
+
+
+
+  .cool-field {
+    margin-top: 20px;
+}
+
+.cool-field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4CAF50; /* Green text color for labels */
+}
+
+.cool-field input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #4CAF50; /* Green border color for inputs */
+    border-radius: 4px;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+.cool-field input:focus {
+    outline: none;
+    border-color: #45a049; /* Darker green border color on focus */
+}
+
+.finish-button {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Green button background color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.finish-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

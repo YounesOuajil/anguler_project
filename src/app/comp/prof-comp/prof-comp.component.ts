@@ -10,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class ProfCompComponent implements OnInit{
   constructor(public etdServiceService:EtdServiceService){}
  
-   etudiants !:Etudiant[]
+   etudiants !:Etudiant[];
+   hour!:string;
+   scienceName!:string;
+
   ngOnInit(): void {
     this.etudiants=this.etdServiceService.getEtudiant();
-    
+    /*this.etdServiceService.getEtudiant().subscribe(Etudiant=>this.etudiants=Etudiant);*/
+    console.log('the page iss good')
   }
 
   markAbsent(etudiants : Etudiant){
@@ -21,6 +25,11 @@ export class ProfCompComponent implements OnInit{
     etudiants.isPresent=true;
     console.log('after is '+etudiants.isPresent)
     
+  }
+
+  finish(){
+    console.log(this.hour);
+    console.log(this.scienceName);
   }
   
   
