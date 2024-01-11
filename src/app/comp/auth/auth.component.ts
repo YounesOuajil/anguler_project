@@ -23,17 +23,18 @@ this.etdServiceService.getEtudiant();
 }
 
 login() {
-  console.log("Entered username:", this.username);
-  console.log("Entered password:", this.password);
+  
 
   for (let i = 0; i < this.etdServiceService.etudiants.length; i++) {
     console.log("Comparing with user:", this.etdServiceService.etudiants[i]);
     if (this.etdServiceService.etudiants[i].username == this.username && this.etdServiceService.etudiants[i].password == this.password) {
       console.log("Login success");
-      if (this.etdServiceService.etudiants[i].role == "admin") {
+      if (this.etdServiceService.etudiants[i].role === "admin") {
         this.router.navigateByUrl('/admin');
-      } else if (this.etdServiceService.etudiants[i].role == "professor") {
-        this.router.navigate(['/nav-prof']);
+        console.log("admin");
+      } else if (this.etdServiceService.etudiants[i].role === "professor") {
+        this.router.navigateByUrl('/nav-prof');
+        console.log("prof");
 
       }
       return; // Return after successful login

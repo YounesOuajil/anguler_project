@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
+import { EtdServiceService } from './../../services/etd-service.service';
 import { Component } from '@angular/core';
+import{Etudiant} from '../../module'
 
 @Component({
   selector: 'app-admin',
@@ -6,7 +9,23 @@ import { Component } from '@angular/core';
   styleUrl: './admin.component.css'
 })
 export class AdminComponent {
-
+  
+  constructor( public studentservis:EtdServiceService,router:Router) {}
+  
+  students!:Etudiant[];
+  searchid!:number;
+  ngOnInit(): void {
+    this.students=this.studentservis.getEtudiant();
+  }
+  search(searchid:number){
+    searchid--;
+    this.students=this.studentservis.getEtudiantById(searchid);
+  }
+  fulllist(){
+    this.students=this.studentservis.getEtudiant();
+  }
+  
+  
 
   
 

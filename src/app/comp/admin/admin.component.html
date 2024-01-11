@@ -1,1 +1,31 @@
-<p>admin works!</p>
+<!-- your.component.html -->
+
+<div class="container">
+  <input type="text" placeholder="Search by id" [(ngModel)]="searchid" />
+  <button (click)="search(searchid)">Search</button>
+  <button (click)="fulllist()">Full List</button>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Phone</th>
+        <th>Group</th>
+        <th>Fillier</th>
+        <th>Absences</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students" [style.color]="student.numberOfAbsences >= 10 ? 'red' : 'black' " [style.backgroundColor]="student.numberOfAbsences >= 10 ? 'pink' : 'transparent'">
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.lastname }}</td>
+        <td>{{ student.phone }}</td>
+        <td>{{ student.group }}</td>
+        <td>{{ student.fillier }}</td>
+        <td>{{ student.numberOfAbsences }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
