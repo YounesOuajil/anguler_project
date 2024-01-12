@@ -29,11 +29,3 @@ body {
     color: #ffcc00; /* Change color on hover */
   }
   
-
-
-
-  .door-emoji {
-    font-size: 1.5em; /* Adjust the font size as needed */
-    vertical-align: middle; /* Align the emoji vertically */
-    margin-left: 5px; /* Add some spacing between the text and the emoji */
-  }

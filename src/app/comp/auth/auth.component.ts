@@ -1,3 +1,4 @@
+import { ProfServiceService } from './../../services/prof-service.service';
 import { EtdServiceService } from './../../services/etd-service.service';
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
@@ -15,7 +16,7 @@ export class AuthComponent implements OnInit{
   password!: string;
   
 
-constructor(public etdServiceService : EtdServiceService,public router:Router ) {}
+constructor(public etdServiceService : EtdServiceService,public router:Router ,public profServiceService:ProfServiceService) {}
 
 ngOnInit(): void {
   
@@ -25,14 +26,14 @@ this.etdServiceService.getEtudiant();
 login() {
   
 
-  for (let i = 0; i < this.etdServiceService.etudiants.length; i++) {
-    console.log("Comparing with user:", this.etdServiceService.etudiants[i]);
-    if (this.etdServiceService.etudiants[i].username == this.username && this.etdServiceService.etudiants[i].password == this.password) {
+  for (let i = 0; i < this.profServiceService.professors.length; i++) {
+    console.log("Comparing with user:", this.profServiceService.professors[i]);
+    if (this.profServiceService.professors[i].username == this.username && this.profServiceService.professors[i].password == this.password) {
       console.log("Login success");
-      if (this.etdServiceService.etudiants[i].role === "admin") {
-        this.router.navigateByUrl('/admin');
+      if (this.profServiceService.professors[i].role === "admin") {
+        this.router.navigateByUrl('/nav-admin');
         console.log("admin");
-      } else if (this.etdServiceService.etudiants[i].role === "professor") {
+      } else if (this.profServiceService.professors[i].role === "professor") {
         this.router.navigateByUrl('/nav-prof');
         console.log("prof");
 

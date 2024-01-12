@@ -5,11 +5,23 @@ import { ProfCompAbsComponent } from './comp/prof-comp-abs/prof-comp-abs.compone
 import { ProfCompComponent } from './comp/prof-comp/prof-comp.component';
 import { AdminComponent } from './comp/admin/admin.component';
 import { NavProfComponent } from './comp/nav-prof/nav-prof.component';
+import { StudentManagementComponent } from './comp/student-management/student-management.component';
+import { ProfessorManagementComponent } from './comp/professor-management/professor-management.component';
+import { NavAdminComponent } from './comp/nav-admin/nav-admin.component';
 
 const routes: Routes = [
   
       {path: '',component: AuthComponent},
-      { path: 'admin', component: AdminComponent },
+      { path: 'nav-admin', component: NavAdminComponent , 
+        children: [
+          { path: '', component: AdminComponent },
+          {path:'admin',component:AdminComponent},
+          { path: 'student-management', component: StudentManagementComponent },
+          { path: 'Professor-management', component: ProfessorManagementComponent },
+          
+        ]},
+
+      
       { path: 'nav-prof', component: NavProfComponent , 
       children: [
         { path: '', component: ProfCompComponent },
@@ -17,8 +29,7 @@ const routes: Routes = [
         { path: 'absent-list', component: ProfCompAbsComponent },
       
         
-      ]
-    }
+      ]},
 
 
     

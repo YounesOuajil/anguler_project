@@ -11,8 +11,7 @@ export class ProfCompComponent implements OnInit{
   constructor(public etdServiceService:EtdServiceService){}
  
    etudiants !:Etudiant[];
-   hour!:string;
-   scienceName!:string;
+   
 
   ngOnInit(): void {
     this.etudiants=this.etdServiceService.getEtudiant();
@@ -23,15 +22,11 @@ export class ProfCompComponent implements OnInit{
   markAbsent(etudiants : Etudiant){
     console.log('befor is '+etudiants.isPresent)
     etudiants.isPresent=true;
+
     console.log('after is '+etudiants.isPresent)
     
   }
-
-  finish(){
-    console.log(this.hour);
-    console.log(this.scienceName);
-  }
-  
+ 
   
 
 }

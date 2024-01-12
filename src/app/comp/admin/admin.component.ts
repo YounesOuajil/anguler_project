@@ -14,21 +14,19 @@ export class AdminComponent {
   
   students!:Etudiant[];
   searchid!:number;
+  selectedStudent!: Etudiant ;
+
   ngOnInit(): void {
     this.students=this.studentservis.getEtudiant();
   }
   search(searchid:number){
-    searchid--;
+   
     this.students=this.studentservis.getEtudiantById(searchid);
   }
   fulllist(){
     this.students=this.studentservis.getEtudiant();
   }
   
-  
-
-  
-
 
 
 }

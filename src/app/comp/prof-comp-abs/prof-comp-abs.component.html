@@ -24,3 +24,13 @@
     </tbody>
   </table>
   
+  <div class="cool-field">
+    <label for="scienceName"> Le Nom du cours:</label>
+    <input [(ngModel)]="scienceName" type="text" id="scienceName" name="scienceName" placeholder="Entrer le nom du cours">
+
+    <label for="hour">L'heure:</label>
+    <input [(ngModel)]="hour" type="text" id="hour" name="hour" placeholder="Entrer l'heure">
+    <br>
+
+    <button class="finish-button" (click)="finish()">Finish</button>
+</div>

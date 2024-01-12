@@ -11,7 +11,8 @@ import { EtdServiceService } from '../../services/etd-service.service';
 export class ProfCompAbsComponent {
 
   constructor(public etdServiceService:EtdServiceService){}
- 
+  hour!:string;
+  scienceName!:string;
   etudiants !:Etudiant[];
  ngOnInit(): void {
    this.etudiants=this.etdServiceService.getEtudiant();
@@ -24,5 +25,14 @@ export class ProfCompAbsComponent {
    console.log('after is '+etudiants.isPresent)
    
  }
+
+
+
+  finish(){
+    console.log(this.hour);
+    console.log(this.scienceName);
+  }
+  
+
 
 }

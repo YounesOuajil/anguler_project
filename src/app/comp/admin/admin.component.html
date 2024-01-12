@@ -1,4 +1,4 @@
-<!-- your.component.html -->
+<!-- your-component.component.html -->
 
 <div class="container">
   <input type="text" placeholder="Search by id" [(ngModel)]="searchid" />
@@ -17,15 +17,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let student of students" [style.color]="student.numberOfAbsences >= 10 ? 'red' : 'black' " [style.backgroundColor]="student.numberOfAbsences >= 10 ? 'pink' : 'transparent'">
-        <td>{{ student.id }}</td>
-        <td>{{ student.name }}</td>
-        <td>{{ student.lastname }}</td>
-        <td>{{ student.phone }}</td>
-        <td>{{ student.group }}</td>
-        <td>{{ student.fillier }}</td>
-        <td>{{ student.numberOfAbsences }}</td>
-      </tr>
+      <ng-container *ngFor="let student of students" >
+        <tr [style.color]="student.numberOfAbsences >= 10 ? 'red' : 'black'"
+            [style.backgroundColor]="student.numberOfAbsences >= 10 ? '#F5E6EA' : 'transparent'"
+            *ngIf="student.numberOfAbsences>0">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.lastname }}</td>
+          <td>{{ student.phone }}</td>
+          <td>{{ student.group }}</td>
+          <td>{{ student.fillier }}</td>
+          <td>{{ student.numberOfAbsences }}</td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 </div>
+

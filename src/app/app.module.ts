@@ -10,6 +10,9 @@ import { ProfCompAbsComponent } from './comp/prof-comp-abs/prof-comp-abs.compone
 import { FormsModule } from '@angular/forms';
 import { AuthComponent } from './comp/auth/auth.component';
 import { AdminComponent } from './comp/admin/admin.component';
+import { NavAdminComponent } from './comp/nav-admin/nav-admin.component';
+import { StudentManagementComponent } from './comp/student-management/student-management.component';
+import { ProfessorManagementComponent } from './comp/professor-management/professor-management.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +20,10 @@ import { AdminComponent } from './comp/admin/admin.component';
     NavProfComponent,
     ProfCompAbsComponent,
     AuthComponent,
-    AdminComponent
+    AdminComponent,
+    NavAdminComponent,
+    StudentManagementComponent,
+    ProfessorManagementComponent
   ],
   imports: [
     BrowserModule,

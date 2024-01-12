@@ -39,3 +39,28 @@ export class Etudiant {
     this.numberOfAbsences = numberOfAbsences; 
   }
 }
+
+
+
+
+export class Professor {
+  username: string;
+  password: string;
+  role: string;
+  name: string;
+  lastname: string;
+  phone: string;
+  group: string;
+  fillier: string;
+
+  constructor(username: string, password: string, role: string, name: string, lastname: string, phone: string, group: string, fillier: string) {
+    this.username = username;
+    this.password = password;
+    this.role = role;
+    this.name = name;
+    this.lastname = lastname;
+    this.phone = phone;
+    this.group = group;
+    this.fillier = fillier;
+  }
+}
