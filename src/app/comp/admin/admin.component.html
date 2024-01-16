@@ -1,5 +1,3 @@
-<!-- your-component.component.html -->
-
 <div class="container">
   <input type="text" placeholder="Search by id" [(ngModel)]="searchid" />
   <button (click)="search(searchid)">Search</button>
@@ -13,11 +11,13 @@
         <th>Phone</th>
         <th>Group</th>
         <th>Fillier</th>
+        <th>Hour</th>
+        <th>Class Name</th>
         <th>Absences</th>
       </tr>
     </thead>
     <tbody>
-      <ng-container *ngFor="let student of students" >
+      <ng-container *ngFor="let student of absence" >
         <tr [style.color]="student.numberOfAbsences >= 10 ? 'red' : 'black'"
             [style.backgroundColor]="student.numberOfAbsences >= 10 ? '#F5E6EA' : 'transparent'"
             *ngIf="student.numberOfAbsences>0">
@@ -27,10 +27,11 @@
           <td>{{ student.phone }}</td>
           <td>{{ student.group }}</td>
           <td>{{ student.fillier }}</td>
+          <td>{{ student.hour }}</td>
+          <td>{{ student.className }}</td>
           <td>{{ student.numberOfAbsences }}</td>
         </tr>
       </ng-container>
     </tbody>
   </table>
 </div>
-

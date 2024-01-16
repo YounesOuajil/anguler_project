@@ -32,6 +32,10 @@ export class ProfessorManagementComponent {
   updateprof(professor: Professor) {
     this.profServiceService.updateProf(professor);
   }
-
+  
+  clear(){
+    this.professor = new Professor('','','','','','','','');
+    
+  }
 
 }

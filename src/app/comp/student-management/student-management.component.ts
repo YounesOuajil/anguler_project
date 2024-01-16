@@ -31,5 +31,10 @@ export class StudentManagementComponent {
     this.studentservis.updateEtudiant(student);
   }
 
+  clear() {
+    this.students = new Etudiant(0, '', '', '', '', '', '', false, '', '', 0, '', '');
+  }
+  
+
 
 }

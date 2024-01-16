@@ -14,6 +14,7 @@ export class AuthComponent implements OnInit{
   isAuthenticated: boolean = true;
   username!: string;
   password!: string;
+  prof_group!:string;
   
 
 constructor(public etdServiceService : EtdServiceService,public router:Router ,public profServiceService:ProfServiceService) {}
@@ -35,17 +36,18 @@ login() {
         console.log("admin");
       } else if (this.profServiceService.professors[i].role === "professor") {
         this.router.navigateByUrl('/nav-prof');
-        console.log("prof");
+        this.profServiceService.setProfGroup(
+        this.profServiceService.professors[i].group 
+        );        console.log("prof");
 
       }
-      return; // Return after successful login
+      return; 
     }
   }
 
   console.log("Invalid credentials");
-  // Handle invalid credentials here, such as showing an error message.
-}
-
-
 
 }
+
+}
+

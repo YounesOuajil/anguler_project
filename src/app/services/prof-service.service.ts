@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Professor } from '../module';
-
+import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProfServiceService {
 
   professors: Professor[]=[];
+
+
+  private profGroupSubject = new BehaviorSubject<string>('');
+
+  // Observable to subscribe to the prof_group changes
+  profGroup$ = this.profGroupSubject.asObservable();
   constructor() { 
     this.professors.push(new Professor('younes1', '1', 'professor', 'younes1', 'ouajil1', '555-123-4567', '1', 'Biology'));
     this.professors.push(new Professor('younes2', '2', 'professor', 'younes2', 'ouajil2', '333-987-6543', '2', 'Chemistry'));
@@ -16,6 +22,12 @@ export class ProfServiceService {
     this.professors.push(new Professor('younes6', '6', 'admin', 'younes6', 'ouajil6', '111-222-3333', '6', 'Physics'));
 
   }
+
+
+  setProfGroup(group: string) {
+    this.profGroupSubject.next(group);
+  }
+
  
   getProf(): Professor[]{
     return this.professors;

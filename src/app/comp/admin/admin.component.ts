@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
-import { EtdServiceService } from './../../services/etd-service.service';
 import { Component } from '@angular/core';
-import{Etudiant} from '../../module'
+import{Absence, Etudiant} from '../../module'
+import { AbsServiceService } from '../../services/abs-service.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,21 +10,21 @@ import{Etudiant} from '../../module'
 })
 export class AdminComponent {
   
-  constructor( public studentservis:EtdServiceService,router:Router) {}
+  constructor( public studentservis:AbsServiceService,router:Router) {}
   
-  students!:Etudiant[];
+  absence!:Absence[];
   searchid!:number;
   selectedStudent!: Etudiant ;
 
   ngOnInit(): void {
-    this.students=this.studentservis.getEtudiant();
+    this.absence=this.studentservis.getAbsences();
   }
   search(searchid:number){
    
-    this.students=this.studentservis.getEtudiantById(searchid);
+    this.absence=this.studentservis.getAbsenceById(searchid);
   }
   fulllist(){
-    this.students=this.studentservis.getEtudiant();
+    this.absence=this.studentservis.getAbsences();
   }
   
 

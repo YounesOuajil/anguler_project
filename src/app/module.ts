@@ -11,7 +11,9 @@ export class Etudiant {
   isPresent: boolean;
   group: string;
   fillier: string;
-  numberOfAbsences: number; // New field
+  numberOfAbsences: number;
+  hour: string;
+  className: string;
 
   constructor(
     id: number,
@@ -24,7 +26,9 @@ export class Etudiant {
     isPresent: boolean,
     group: string,
     fillier: string,
-    numberOfAbsences: number 
+    numberOfAbsences: number,
+    hour: string,
+    className: string
   ) {
     this.id = id;
     this.username = username;
@@ -36,9 +40,12 @@ export class Etudiant {
     this.role = role;
     this.group = group;
     this.fillier = fillier;
-    this.numberOfAbsences = numberOfAbsences; 
+    this.numberOfAbsences = numberOfAbsences;
+    this.hour = hour;
+    this.className = className;
   }
 }
+
 
 
 
@@ -64,3 +71,42 @@ export class Professor {
     this.fillier = fillier;
   }
 }
+
+
+// absence.model.ts
+
+// absence.model.ts
+export class Absence {
+  id: number;
+  name: string;
+  lastname: string;
+  phone: string;
+  group: string;
+  fillier: string;
+  hour: string;
+  className: string;
+  numberOfAbsences: number;
+
+  constructor(
+    id: number,
+    name: string,
+    lastname: string,
+    phone: string,
+    group: string,
+    fillier: string,
+    hour: string,
+    className: string,
+    numberOfAbsences: number
+  ) {
+    this.id = id;
+    this.name = name;
+    this.lastname = lastname;
+    this.phone = phone;
+    this.group = group;
+    this.fillier = fillier;
+    this.hour = hour;
+    this.className = className;
+    this.numberOfAbsences = numberOfAbsences;
+  }
+}
+
